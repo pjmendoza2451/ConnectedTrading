@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="icon" href="logo.jpeg">
+    <style>
+        body {
+            background-color: #000;
+            color: #ffd700;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .about-section {
+            padding: 60px 20px;
+        }
+
+        h1 {
+            color: #ffd700;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .about-content {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .about-image {
+            flex: 1 1 300px;
+            max-width: 300px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .about-text {
+            flex: 2 1 400px;
+            max-width: 600px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        .btn {
+            margin-top: 20px;
+            background-color: #ffd700;
+            color: #000;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background-color: #e6c700;
+            color: #000;
+        }
+
+        /* Logo Styling */
+
+        .logo {
+            width: 100px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /* Navbar Text */
+        .navbar-brand {
+            display: flex;
+            align-items: center; /* Aligns the logo and text vertically */
+        }
+
+        /* Navbar Links Styling */
+        .navbar .nav-link {
+            color: #ffd700; /* Gold links */
+            font-size: 1.1rem; /* Slightly larger font size */
+            margin-right: 15px; /* Space between links */
+            transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+        }
+
+        .navbar .nav-link:hover {
+            color: #fff; /* White color when hovered */
+            transform: scale(1.1); /* Slight zoom-in effect on hover */
+        }
+
+        /* Navbar brand text styling */
+        .navbar-brand span {
+            font-size: 1.8rem; /* Logo text size */
+            font-weight: bold;
+            color: #ffd700; /* Gold color */
+            margin-left: 10px; /* Space between logo and text */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" style="background: linear-gradient(to right, #111, #444); padding: 15px 0; border-bottom: 2px solid #ffd700;">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="logo.jpeg" alt="logo" class="logo">
+                <span class="ms-2 text-white" style="font-size: 1.8rem; font-weight: bold;"></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#courses">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Me Section -->
+    <section class="about-section text-center">
+        <div class="container">
+            <h1>About Me</h1>
+            <div class="about-content">
+                <!-- Image Section -->
+                <div class="about-image">
+                    <img src="your-image.jpg" alt="Paul's Portrait">
+                </div>
+                <!-- Text Section -->
+                <div class="about-text">
+                    <p>
+                        I am a seasoned forex trader with over six years of experience in the industry. As a trading speaker at Octa, formerly known as OctaFX, I have had the privilege of sharing my knowledge and strategies with a wide audience. Over the years, I have been invited by various companies and groups to teach forex trading, helping countless individuals to master the skills needed to succeed in the market.
+                    </p>
+                    <p>
+                        My teaching journey has enabled me to mentor hundreds, if not thousands, of students, guiding them through the complexities of forex trading. I have also had the honor of assisting a startup trading desk, providing them with the insights and tools necessary for success.
+                    </p>
+                    <a href="mailto:pjmendoza3@gmail.coml" class="btn">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

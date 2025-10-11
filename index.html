@@ -30,16 +30,51 @@
     }
 
     /* NAVBAR */
-    .navbar {
-      background: linear-gradient(to right, #111, #444);
-      padding: 14px 0;
-      border-bottom: 2px solid var(--gold);
-    }
-    .logo { width: 88px; height:auto; }
-    .navbar-brand span { font-size:1.6rem; font-weight:700; color:var(--gold); margin-left:10px;}
-    .navbar .nav-link { color:var(--gold); font-size:1.02rem; margin-right:12px; transition:color .25s, transform .25s; }
-    .navbar .nav-link:hover { color:#fff; transform:scale(1.06); }
-    .navbar-toggler { border:1px solid var(--gold); }
+    /* NAVBAR (transparent + blur) */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+  padding: 14px 0;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.logo { width: 88px; height: auto; }
+
+.navbar-brand span {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-left: 10px;
+}
+
+.navbar .nav-link {
+  color: var(--gold);
+  font-size: 1.02rem;
+  margin-right: 12px;
+  transition: color 0.25s, transform 0.25s;
+}
+
+.navbar .nav-link:hover {
+  color: #fff;
+  transform: scale(1.06);
+}
+
+.navbar-toggler {
+  border: 1px solid var(--gold);
+}
+
+/* Add padding top to body para di matakpan ng fixed navbar */
+body {
+  padding-top: 90px;
+}
+
 
     /* HERO */
     .hero {
@@ -147,6 +182,7 @@
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#how">How it Works</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
           <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
           <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>

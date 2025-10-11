@@ -2,162 +2,234 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="icon" href="logo.jpeg">
-    <style>
-        body {
-            background-color: #000;
-            color: #ffd700;
-            font-family: 'Arial', sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me - Connected Trading</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+  <link rel="icon" href="logo.jpeg" />
 
-        .about-section {
-            padding: 60px 20px;
-        }
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #000, #2b1d00, #000);
+      color: #ffd700;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
 
-        h1 {
-            color: #ffd700;
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-        }
+    /* Transparent Navbar with Blur */
+    .navbar {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      backdrop-filter: blur(12px);
+      background: rgba(0, 0, 0, 0.5);
+      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+      z-index: 999;
+    }
 
-        .about-content {
-            margin-top: 40px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 30px;
-        }
+    .navbar .nav-link {
+      color: #ffd700;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
 
-        .about-image {
-            flex: 1 1 300px;
-            max-width: 300px;
-        }
+    .navbar .nav-link:hover {
+      color: #fff;
+      transform: scale(1.1);
+    }
 
-        .about-image img {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
-        }
+    .navbar-brand img {
+      width: 90px;
+      height: auto;
+    }
 
-        .about-text {
-            flex: 2 1 400px;
-            max-width: 600px;
-        }
+    .navbar-brand span {
+      color: #ffd700;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-left: 10px;
+    }
 
-        p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: #ddd;
-        }
+    /* About Section */
+    .about-section {
+      padding: 140px 20px 80px;
+      text-align: center;
+    }
 
-        .btn {
-            margin-top: 20px;
-            background-color: #ffd700;
-            color: #000;
-            font-weight: bold;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            text-transform: uppercase;
-        }
+    .about-section h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #ffd700;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
 
-        .btn:hover {
-            background-color: #e6c700;
-            color: #000;
-        }
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-        /* Logo Styling */
+    /* Circular glowing portrait */
+    .about-image img {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #ffd700;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+      transition: all 0.4s ease;
+    }
 
-        .logo {
-            width: 100px; /* Adjust the width as needed */
-            height: auto; /* Maintain aspect ratio */
-        }
+    .about-image img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(255, 215, 0, 0.7);
+    }
 
-        /* Navbar Text */
-        .navbar-brand {
-            display: flex;
-            align-items: center; /* Aligns the logo and text vertically */
-        }
+    .about-text {
+      max-width: 600px;
+      text-align: left;
+    }
 
-        /* Navbar Links Styling */
-        .navbar .nav-link {
-            color: #ffd700; /* Gold links */
-            font-size: 1.1rem; /* Slightly larger font size */
-            margin-right: 15px; /* Space between links */
-            transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
-        }
+    /* Storytelling text */
+    .about-text .story-line {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      margin-bottom: 18px;
+      color: #ddd;
+      transition: transform 0.3s ease, color 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
 
-        .navbar .nav-link:hover {
-            color: #fff; /* White color when hovered */
-            transform: scale(1.1); /* Slight zoom-in effect on hover */
-        }
+    .about-text .story-line.highlight {
+      color: #ffd700;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
 
-        /* Navbar brand text styling */
-        .navbar-brand span {
-            font-size: 1.8rem; /* Logo text size */
-            font-weight: bold;
-            color: #ffd700; /* Gold color */
-            margin-left: 10px; /* Space between logo and text */
-        }
-    </style>
+    .about-text .story-line.in-view {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.7s ease-out;
+    }
+
+    .btn-custom {
+      display: inline-block;
+      background: #ffd700;
+      color: #000;
+      font-weight: bold;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-top: 15px;
+    }
+
+    .btn-custom:hover {
+      background: #fff;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #111;
+      color: #ffd700;
+      text-align: center;
+      padding: 20px 0;
+      border-top: 1px solid #333;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .about-section {
+        padding-top: 120px;
+      }
+
+      .about-text {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg" style="background: linear-gradient(to right, #111, #444); padding: 15px 0; border-bottom: 2px solid #ffd700;">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="logo.jpeg" alt="logo" class="logo">
-                <span class="ms-2 text-white" style="font-size: 1.8rem; font-weight: bold;"></span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#courses">Courses</a></li>
-                    <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="logo.jpeg" alt="logo">
+        <span>Connected Trading</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#courses">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- About Me Section -->
-    <section class="about-section text-center">
-        <div class="container">
-            <h1>About Me</h1>
-            <div class="about-content">
-                <!-- Image Section -->
-                <div class="about-image">
-                    <img src="portrait.png" alt="Portrait">
-                </div>
-                <!-- Text Section -->
-                <div class="about-text">
-                    <p>
-                        I am a seasoned forex trader with over six years of experience in the industry. As a trading speaker at Octa, formerly known as OctaFX, I have had the privilege of sharing my knowledge and strategies with a wide audience. Over the years, I have been invited by various companies and groups to teach forex trading, helping countless individuals to master the skills needed to succeed in the market.
-                    </p>
-                    <p>
-                        My teaching journey has enabled me to mentor hundreds, if not thousands, of students, guiding them through the complexities of forex trading. I have also had the honor of assisting a startup trading desk, providing them with the insights and tools necessary for success.
-                    </p>
-                    <a href="mailto:connectedtradingph@gmail.com" class="btn">Get in Touch</a>
-                </div>
-            </div>
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="container">
+      <h1>About Me</h1>
+      <div class="about-content">
+        <div class="about-image">
+          <img src="portrait.png" alt="Paul Mendoza portrait">
         </div>
-    </section>
+        <div class="about-text">
+          <p class="story-line highlight">I started trading forex with high hopes… and lost everything in just 2 days. It was a harsh wake-up call, but it taught me the most important lesson: trading is a skill, not luck.</p>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+          <p class="story-line">From those early struggles, I dedicated myself to learning everything from proper risk management to strategy development. Soon, I was not just trading my own account, but teaching others how to do it responsibly. I even became a trading speaker at Octa (formerly OctaFX), sharing insights and guiding new traders.</p>
+
+          <p class="story-line highlight">Today, I’m proud to say I’m a <strong>funded trader at Alpha Capital</strong>, consistently applying strategies I’ve mastered and mentoring students to trade with confidence.</p>
+
+          <p class="story-line">If you want to avoid the mistakes I made and trade like a pro, I’m here to guide you every step of the way.</p>
+
+          <a href="mailto:connectedtradingph@gmail.com" class="btn-custom">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Connected Trading. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll animation for story lines
+    const storyLines = document.querySelectorAll('.story-line');
+    function animateStory() {
+      const triggerBottom = window.innerHeight * 0.85;
+      storyLines.forEach(line => {
+        const top = line.getBoundingClientRect().top;
+        if (top < triggerBottom) {
+          line.classList.add('in-view');
+        }
+      });
+    }
+    window.addEventListener('scroll', animateStory);
+    window.addEventListener('load', animateStory);
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
